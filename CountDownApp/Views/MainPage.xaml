@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CountDownApp.ViewModels"
+             x:Class="CountDownApp.MainPage"            
+             BackgroundImageSource="resize.jpg">
+
+
+    <StackLayout>
+      <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+               
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                
+        </Grid.ColumnDefinitions>
+
+            <Label Text="WE'RE LAUNCHING" CharacterSpacing="5" FontSize="Medium" FontAttributes="Bold" VerticalOptions="CenterAndExpand"  Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" TextColor="White"/>
+            <Label Text="SOON" Grid.Row="2" CharacterSpacing="5" FontSize="Medium" Grid.Column="0" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+
+
+            
+        <Grid Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#2a2c40" BorderColor="#1e202e" HasShadow="True"  CornerRadius="8">
+            <local:FlipView Grid.Row="0" Margin="-19" BackgroundColor="#343750" Grid.Column="0" x:Name="dayFlipView"  />
+            </Frame>
+                <Label Text="DAYS" CharacterSpacing="3" FontAttributes="Bold" TextColor="#8487a9" FontSize="Micro" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0"/>
+
+            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="#2a2c40" BorderColor="#1e202e" HasShadow="True" CornerRadius="8">
+            <local:FlipView Grid.Row="0" Margin="-19" BackgroundColor="#343750" Grid.Column="1" x:Name="hourFlipView" />
+            </Frame>
+                <Label Text="HOURS" CharacterSpacing="3" FontAttributes="Bold" TextColor="#8487a9" FontSize="Micro" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="2"/>
+
+            <Frame Grid.Row="0" Grid.Column="4" BackgroundColor="#2a2c40" BorderColor="#1e202e" HasShadow="True" CornerRadius="8">
+            <local:FlipView Grid.Row="0" Margin="-19" BackgroundColor="#343750" Grid.Column="2" x:Name="minuteFlipView" />
+            </Frame>
+                <Label Text="MINUTES" CharacterSpacing="3" FontAttributes="Bold" TextColor="#8487a9" FontSize="Micro" Grid.Row="1" HorizontalOptions="CenterAndExpand" Grid.Column="4"/>
+
+            <Frame Grid.Row="0" Grid.Column="6" BackgroundColor="#2a2c40"  BorderColor="#1e202e" HasShadow="True" CornerRadius="8">
+            <local:FlipView Grid.Row="0" Margin="-19" BackgroundColor="#343750" Grid.Column="3" x:Name="secondFlipView" />
+            </Frame>
+                <Label Text="SECONDS" CharacterSpacing="3" FontAttributes="Bold" TextColor="#8487a9" FontSize="Micro" Grid.Row="1" HorizontalOptions="CenterAndExpand" Grid.Column="6"/>
+        </Grid>
+
+    
+    
+      </Grid>
+        
+        
+        <StackLayout  HorizontalOptions="CenterAndExpand" Spacing="40" Orientation="Horizontal" Margin="0,0,0,35" VerticalOptions="EndAndExpand">
+
+            <Image Source="facebook.png" HeightRequest="25" WidthRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="tapImage" Tapped="tapImage_Tapped" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="pinterest.png" HeightRequest="25" WidthRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer  Tapped="tapImage_Tapped_1" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image Source="instagram.png" HeightRequest="25" WidthRequest="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer  Tapped="tapImage_Tapped_2" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            
+
+
+
+            
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
+
